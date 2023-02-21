@@ -25,7 +25,7 @@ enum {
   anon_sym_RBRACK = 6,
   anon_sym_DQUOTE = 7,
   aux_sym_string_content_token1 = 8,
-  sym_escape_sequence = 9,
+  sym__escape_sequence = 9,
   sym_number = 10,
   sym_true = 11,
   sym_false = 12,
@@ -54,7 +54,7 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_RBRACK] = "]",
   [anon_sym_DQUOTE] = "\"",
   [aux_sym_string_content_token1] = "string_content_token1",
-  [sym_escape_sequence] = "escape_sequence",
+  [sym__escape_sequence] = "_escape_sequence",
   [sym_number] = "number",
   [sym_true] = "true",
   [sym_false] = "false",
@@ -83,7 +83,7 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_RBRACK] = anon_sym_RBRACK,
   [anon_sym_DQUOTE] = anon_sym_DQUOTE,
   [aux_sym_string_content_token1] = aux_sym_string_content_token1,
-  [sym_escape_sequence] = sym_escape_sequence,
+  [sym__escape_sequence] = sym__escape_sequence,
   [sym_number] = sym_number,
   [sym_true] = sym_true,
   [sym_false] = sym_false,
@@ -139,8 +139,8 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = false,
   },
-  [sym_escape_sequence] = {
-    .visible = true,
+  [sym__escape_sequence] = {
+    .visible = false,
     .named = true,
   },
   [sym_number] = {
@@ -494,7 +494,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != '\\') ADVANCE(37);
       END_STATE();
     case 38:
-      ACCEPT_TOKEN(sym_escape_sequence);
+      ACCEPT_TOKEN(sym__escape_sequence);
       END_STATE();
     case 39:
       ACCEPT_TOKEN(sym_number);
@@ -614,7 +614,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_LBRACK] = ACTIONS(1),
     [anon_sym_RBRACK] = ACTIONS(1),
     [anon_sym_DQUOTE] = ACTIONS(1),
-    [sym_escape_sequence] = ACTIONS(1),
+    [sym__escape_sequence] = ACTIONS(1),
     [sym_number] = ACTIONS(1),
     [sym_true] = ACTIONS(1),
     [sym_false] = ACTIONS(1),
@@ -883,7 +883,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym_string_content,
     ACTIONS(53), 2,
       aux_sym_string_content_token1,
-      sym_escape_sequence,
+      sym__escape_sequence,
   [256] = 6,
     ACTIONS(3), 1,
       sym_comment,
@@ -906,7 +906,7 @@ static const uint16_t ts_small_parse_table[] = {
       aux_sym_string_content_repeat1,
     ACTIONS(63), 2,
       aux_sym_string_content_token1,
-      sym_escape_sequence,
+      sym__escape_sequence,
   [289] = 4,
     ACTIONS(55), 1,
       sym_comment,
@@ -916,7 +916,7 @@ static const uint16_t ts_small_parse_table[] = {
       aux_sym_string_content_repeat1,
     ACTIONS(68), 2,
       aux_sym_string_content_token1,
-      sym_escape_sequence,
+      sym__escape_sequence,
   [303] = 5,
     ACTIONS(3), 1,
       sym_comment,

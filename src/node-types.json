@@ -126,17 +126,7 @@
   {
     "type": "string_content",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "escape_sequence",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "\"",
@@ -160,10 +150,6 @@
   },
   {
     "type": "comment",
-    "named": true
-  },
-  {
-    "type": "escape_sequence",
     "named": true
   },
   {

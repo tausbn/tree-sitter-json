@@ -44,10 +44,10 @@ module.exports = grammar({
 
     string_content: $ => repeat1(choice(
       token.immediate(prec(1, /[^\\"\n]+/)),
-      $.escape_sequence
+      $._escape_sequence
     )),
 
-    escape_sequence: $ => token.immediate(seq(
+    _escape_sequence: $ => token.immediate(seq(
       '\\',
       /(\"|\\|\/|b|f|n|r|t|u)/
     )),
