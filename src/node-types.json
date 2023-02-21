@@ -1,6 +1,6 @@
 [
   {
-    "type": "_value",
+    "type": "value",
     "named": true,
     "subtypes": [
       {
@@ -42,7 +42,7 @@
       "required": false,
       "types": [
         {
-          "type": "_value",
+          "type": "value",
           "named": true
         }
       ]
@@ -57,7 +57,7 @@
       "required": false,
       "types": [
         {
-          "type": "_value",
+          "type": "value",
           "named": true
         }
       ]
@@ -101,7 +101,7 @@
         "required": true,
         "types": [
           {
-            "type": "_value",
+            "type": "value",
             "named": true
           }
         ]

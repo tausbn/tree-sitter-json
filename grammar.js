@@ -7,13 +7,13 @@ module.exports = grammar({
   ],
 
   supertypes: $ => [
-    $._value
+    $.value
   ],
 
   rules: {
-    document: $ => repeat($._value),
+    document: $ => repeat($.value),
 
-    _value: $ => choice(
+    value: $ => choice(
       $.object,
       $.array,
       $.number,
@@ -30,11 +30,11 @@ module.exports = grammar({
     pair: $ => seq(
       field("key", choice($.string, $.number)),
       ":",
-      field("value", $._value)
+      field("value", $.value)
     ),
 
     array: $ => seq(
-      "[", commaSep($._value), "]"
+      "[", commaSep($.value), "]"
     ),
 
     string: $ => choice(
