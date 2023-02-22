@@ -24,7 +24,7 @@ module.exports = grammar({
     ),
 
     object: $ => seq(
-      "{", commaSep($.pair), "}"
+      "{", commaSep($.pair), optional(","), "}"
     ),
 
     pair: $ => seq(
@@ -34,7 +34,7 @@ module.exports = grammar({
     ),
 
     array: $ => seq(
-      "[", commaSep($.value), "]"
+      "[", commaSep($.value), optional(","), "]"
     ),
 
     string: $ => choice(
